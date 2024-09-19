@@ -98,9 +98,10 @@ pipeline {
                             git status
                             BUILD_NUMBER=${BUILD_NUMBER}
                             echo $BUILD_NUMBER
-                            imageTag=$(grep -oP '(?<=version: ).*' values.yaml)
+                            imageTag=$(grep -oP '(?<=version: )[^\s]+' values.yaml)
                             echo $imageTag
-                            sed -i "s|repo: .*|repo: ${REPOSITORY_URI}${ECR_REPO_NAME}|" values.yaml
+                            sed -i "s|repo: .*|repo: ${ECR_REPO_NAME}|" values.yaml
+                            sed -i "s|version: ${imageTag}|version: ${BUILD_NUMBER}|" values.yaml
                             git add values.yaml
                             git commit -m "Update Helm chart image version to ${BUILD_NUMBER}"
                             git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:master

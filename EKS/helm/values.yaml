@@ -117,8 +117,8 @@ ratings:
 redis:
   enabled: true
   image:
-    repo: redis
-    version: latest
+    repo: ""
+    version: ""
     pullPolicy: IfNotPresent
   # Storage class to use with redis statefulset.
   storageClassName: gp2

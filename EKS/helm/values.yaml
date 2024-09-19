@@ -1,9 +1,9 @@
 # Registry and repository for Docker images
 # Default is docker/robotshop/image:latest
-image:
-  repo: 743362591897.dkr.ecr.ap-south-1.amazonaws.com/roboshop-frontend
-  version: 16
-  pullPolicy: IfNotPresent
+# image:
+#   repo: 743362591897.dkr.ecr.ap-south-1.amazonaws.com/roboshop-frontend
+#   version: 16
+#   pullPolicy: IfNotPresent
 
 # EUM configuration
 # Provide your key and set the endpoint
@@ -61,4 +61,9 @@ shipping: {}
 
 user: {}
 
-web: {}
+# Web microservice section with specific image repo and version
+web:
+  image:
+    repo: 743362591897.dkr.ecr.ap-south-1.amazonaws.com/roboshop-frontend
+    version: 16
+    pullPolicy: IfNotPresent

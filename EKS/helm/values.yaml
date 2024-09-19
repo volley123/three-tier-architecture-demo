@@ -1,8 +1,8 @@
 # Registry and repository for Docker images
 # Default is docker/robotshop/image:latest
 image:
-  repo: 743362591897.dkr.ecr.ap-south-1.amazonaws.com/
-  version: 10
+  repo: 
+  version: 13
   pullPolicy: IfNotPresent
 
 # EUM configuration

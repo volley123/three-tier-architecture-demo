@@ -19,7 +19,7 @@ spec:
       {{ end }}
       containers:
       - name: user
-        image: {{ .Values.image.repo }}:{{ .Values.image.version }}
+        {{ .Values.image.repo | default "default-repo" }}:{{ .Values.image.version | default "latest" }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
           # agent networking access

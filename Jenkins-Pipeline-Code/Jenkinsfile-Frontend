@@ -100,7 +100,7 @@ pipeline {
                             echo $BUILD_NUMBER
                             imageTag=$(grep -oP '(?<=version: )[^ ]+' values.yaml)
                             echo $imageTag
-                            sed -i "s|repo: .*|repo: ${AWS_ECR_REPO_NAME}|" values.yaml
+                            sed -i "s|repo: .*|repo: ${REPOSITORY_URI}/${AWS_ECR_REPO_NAME}|" values.yaml
                             sed -i "s|version: ${imageTag}|version: ${BUILD_NUMBER}|" values.yaml
                             git add values.yaml
                             git commit -m "Update Helm chart image version to ${BUILD_NUMBER}"

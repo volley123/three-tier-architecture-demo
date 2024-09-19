@@ -116,6 +116,10 @@ ratings:
 
 redis:
   enabled: true
+  image:
+    repo: ""
+    version: ""
+    pullPolicy: IfNotPresent
   affinity: {}
   nodeSelector: {}
   tolerations: []

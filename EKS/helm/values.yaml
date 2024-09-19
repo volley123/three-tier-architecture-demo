@@ -35,36 +35,60 @@ ocCreateRoute: false
 
 cart:
   enabled: false
+  image:
+    repo: ""
+    version: ""
+    pullPolicy: IfNotPresent
   affinity: {}
   nodeSelector: {}
   tolerations: []
 
 catalogue:
   enabled: false
+  image:
+    repo: ""
+    version: ""
+    pullPolicy: IfNotPresent
   affinity: {}
   nodeSelector: {}
   tolerations: []
 
 dispatch:
   enabled: false
+  image:
+    repo: ""
+    version: ""
+    pullPolicy: IfNotPresent
   affinity: {}
   nodeSelector: {}
   tolerations: []
 
 mongodb:
   enabled: false
+  image:
+    repo: ""
+    version: ""
+    pullPolicy: IfNotPresent
   affinity: {}
   nodeSelector: {}
-  tolerations: {}
+  tolerations: []
 
 mysql:
   enabled: false
+  image:
+    repo: ""
+    version: ""
+    pullPolicy: IfNotPresent
   affinity: {}
   nodeSelector: {}
-  tolerations: {}
+  tolerations: []
 
 payment:
   enabled: false
+  image:
+    repo: ""
+    version: ""
+    pullPolicy: IfNotPresent
   # Alternative payment gateway URL
   # Default is https://www.paypal.com
   gateway: null
@@ -72,18 +96,30 @@ payment:
 
 rabbitmq:
   enabled: false
+  image:
+    repo: ""
+    version: ""
+    pullPolicy: IfNotPresent
   affinity: {}
   nodeSelector: {}
   tolerations: []
 
 ratings:
   enabled: false
+  image:
+    repo: ""
+    version: ""
+    pullPolicy: IfNotPresent
   affinity: {}
   nodeSelector: {}
   tolerations: []
 
 redis:
   enabled: false
+  image:
+    repo: ""
+    version: ""
+    pullPolicy: IfNotPresent
   # Storage class to use with redis statefulset.
   storageClassName: gp2
   affinity: {}

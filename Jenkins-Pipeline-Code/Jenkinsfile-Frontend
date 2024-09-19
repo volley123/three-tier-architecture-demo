@@ -103,7 +103,7 @@ pipeline {
                             sed -i "s|web.image.repo: .*|web.image.repo: ${ECR_REPO_NAME}|" values.yaml
                             sed -i "s|web.image.version: .*|web.image.version: ${BUILD_NUMBER}|" values.yaml
                             git add values.yaml
-                            git commit -m "Update Helm chart image version to ${BUILD_NUMBER}"
+                            git commit -m "Update Helm chart web microservice image to ${BUILD_NUMBER} and repository to ${ECR_REPO_NAME}"
                             git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:master
                         '''
                     }

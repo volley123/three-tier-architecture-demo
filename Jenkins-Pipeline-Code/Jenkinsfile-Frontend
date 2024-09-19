@@ -98,7 +98,7 @@ pipeline {
                             git status
                             BUILD_NUMBER=${BUILD_NUMBER}
                             echo $BUILD_NUMBER
-                            imageTag=$(grep -oP '(?<=version: )[^\s]+' values.yaml)
+                            imageTag=$(grep -oP '(?<=version: )[^ ]+' values.yaml)
                             echo $imageTag
                             sed -i "s|repo: .*|repo: ${ECR_REPO_NAME}|" values.yaml
                             sed -i "s|version: ${imageTag}|version: ${BUILD_NUMBER}|" values.yaml

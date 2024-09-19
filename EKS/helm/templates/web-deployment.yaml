@@ -19,7 +19,7 @@ spec:
       {{ end }}
       containers:
       - name: web
-        image: {{ .Values.web.image.repo }}/rs-web:{{ .Values.web.image.version }}
+        image: {{ .Values.web.image.repo }}:{{ .Values.web.image.version }}
         imagePullPolicy: {{ .Values.web.image.pullPolicy }}
         {{- if .Values.eum.key }}
         env:

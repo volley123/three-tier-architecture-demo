@@ -95,7 +95,7 @@ payment:
   #gateway: https://www.worldpay.com
 
 rabbitmq:
-  enabled: false
+  enabled: true
   image:
     repo: ""
     version: ""

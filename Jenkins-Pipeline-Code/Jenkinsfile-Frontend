@@ -98,11 +98,11 @@ pipeline {
                             git status
                             BUILD_NUMBER=${BUILD_NUMBER}
                             echo $BUILD_NUMBER
-                            imageTag=$(awk '/^[ ]*repo:/ {print $2}' values.yaml)
+                            imageTag=$(grep -oP '(?<=version: )[^\s]+' values.yaml)
                             echo "Current web service image version: $imageTag"
-                            sed -i "s|web.image.repo: .*|web.image.repo: ${ECR_REPO_NAME}|" values.yaml
+                            sed -i "s|repo: .*|repo: ${ECR_REPO_NAME}|" values.yaml
                             echo "repo-name: $ECR_REPO_NAME"
-                            sed -i "s|web.image.version: .*|web.image.version: ${BUILD_NUMBER}|" values.yaml
+                            sed -i "s|version: .*|version: ${BUILD_NUMBER}|" values.yaml
                             git add values.yaml
                             git commit -m "Update Helm chart web microservice image to ${BUILD_NUMBER} and repository to ${ECR_REPO_NAME}"
                             git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:master

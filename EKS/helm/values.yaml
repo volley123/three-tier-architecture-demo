@@ -1,8 +1,8 @@
 # Registry and repository for Docker images
 # Default is docker/robotshop/image:latest
 # image:
-#   repo: 
-#   version: 32
+#   repo: roboshop-frontend
+#   version: 33
 #   pullPolicy: IfNotPresent
 
 # EUM configuration
@@ -64,6 +64,6 @@ user: {}
 # Web microservice section with specific image repo and version
 web:
   image:
-    repo: 
-    version: 32
+    repo: roboshop-frontend
+    version: 33
     pullPolicy: IfNotPresent

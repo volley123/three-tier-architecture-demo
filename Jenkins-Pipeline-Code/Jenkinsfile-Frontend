@@ -98,9 +98,10 @@ pipeline {
                             git status
                             BUILD_NUMBER=${BUILD_NUMBER}
                             echo $BUILD_NUMBER
-                            imageTag=$(awk '/web:/{f=1} f && /image:/{if($1=="version:"){print $2; exit}}' values.yaml)
+                            imageTag=$(grep -oP '(?<=web.image.repo)[^ ]+' values.yaml)
                             echo "Current web service image version: $imageTag"
                             sed -i "s|web.image.repo: .*|web.image.repo: ${ECR_REPO_NAME}|" values.yaml
+                            echo "repo-name: $ECR_REPO_NAME"
                             sed -i "s|web.image.version: .*|web.image.version: ${BUILD_NUMBER}|" values.yaml
                             git add values.yaml
                             git commit -m "Update Helm chart web microservice image to ${BUILD_NUMBER} and repository to ${ECR_REPO_NAME}"

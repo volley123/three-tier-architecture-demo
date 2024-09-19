@@ -98,7 +98,7 @@ pipeline {
                             git status
                             BUILD_NUMBER=${BUILD_NUMBER}
                             echo $BUILD_NUMBER
-                            imageTag=$(awk '/web.image.repo:/ {print $2}' values.yaml)
+                            imageTag=$(awk '/^[ ]*repo:/ {print $2}' values.yaml)
                             echo "Current web service image version: $imageTag"
                             sed -i "s|web.image.repo: .*|web.image.repo: ${ECR_REPO_NAME}|" values.yaml
                             echo "repo-name: $ECR_REPO_NAME"

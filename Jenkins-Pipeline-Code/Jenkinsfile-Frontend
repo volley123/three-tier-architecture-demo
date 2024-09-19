@@ -100,7 +100,7 @@ pipeline {
                             echo $BUILD_NUMBER
                             imageTag=$(grep 'version:' values.yaml | awk '{print $2}')
                             echo "Current web service image version: $imageTag"
-                            sed -i "s|repo: .*|repo: ${ECR_REPO_NAME}|" values.yaml
+                            sed -i "s|repo: .*|repo: ${AWS_ECR_REPO_NAME}|" values.yaml
                             echo "repo-name: $ECR_REPO_NAME"
                             sed -i "s|version: .*|version: ${BUILD_NUMBER}|" values.yaml
                             git add values.yaml

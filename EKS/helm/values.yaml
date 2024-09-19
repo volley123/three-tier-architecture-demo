@@ -9,7 +9,7 @@
 # Provide your key and set the endpoint
 eum:
   key: null
-  url: https://eum-eu-west-1.instana.io
+  url: https://eum-ap-south-1.instana.io
   #url: https://eum-us-west-2.instana.io
 
 # Pod Security Policy
@@ -33,37 +33,82 @@ ocCreateRoute: false
 #   tolerations: []
 ######################################
 
-cart: {}
+cart:
+  enabled: false
+  affinity: {}
+  nodeSelector: {}
+  tolerations: []
 
-catalogue: {}
+catalogue:
+  enabled: false
+  affinity: {}
+  nodeSelector: {}
+  tolerations: []
 
-dispatch: {}
+dispatch:
+  enabled: false
+  affinity: {}
+  nodeSelector: {}
+  tolerations: []
 
-mongodb: {}
+mongodb:
+  enabled: false
+  affinity: {}
+  nodeSelector: {}
+  tolerations: {}
 
-mysql: {}
+mysql:
+  enabled: false
+  affinity: {}
+  nodeSelector: {}
+  tolerations: {}
 
 payment:
+  enabled: false
   # Alternative payment gateway URL
   # Default is https://www.paypal.com
   gateway: null
   #gateway: https://www.worldpay.com
 
-rabbitmq: {}
+rabbitmq:
+  enabled: false
+  affinity: {}
+  nodeSelector: {}
+  tolerations: []
 
-ratings: {}
+ratings:
+  enabled: false
+  affinity: {}
+  nodeSelector: {}
+  tolerations: []
 
 redis:
+  enabled: false
   # Storage class to use with redis statefulset.
   storageClassName: gp2
+  affinity: {}
+  nodeSelector: {}
+  tolerations: []
 
-shipping: {}
+shipping:
+  enabled: false
+  affinity: {}
+  nodeSelector: {}
+  tolerations: []
 
-user: {}
+user:
+  enabled: false
+  affinity: {}
+  nodeSelector: {}
+  tolerations: []
 
 # Web microservice section with specific image repo and version
 web:
+  enabled: true
   image:
     repo: 743362591897.dkr.ecr.ap-south-1.amazonaws.com/roboshop-frontend
     version: 34
     pullPolicy: IfNotPresent
+  affinity: {}
+  nodeSelector: {}
+  tolerations: []

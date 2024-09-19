@@ -64,20 +64,20 @@ dispatch:
   tolerations: []
 
 mongodb:
-  enabled: false
+  enabled: true
   image:
-    repo: ""
-    version: ""
+    repo: mongo
+    version: latest
     pullPolicy: IfNotPresent
   affinity: {}
   nodeSelector: {}
   tolerations: []
 
 mysql:
-  enabled: false
+  enabled: true
   image:
-    repo: ""
-    version: ""
+    repo: mysql
+    version: latest
     pullPolicy: IfNotPresent
   affinity: {}
   nodeSelector: {}
@@ -115,10 +115,10 @@ ratings:
   tolerations: []
 
 redis:
-  enabled: false
+  enabled: true
   image:
-    repo: ""
-    version: ""
+    repo: redis
+    version: latest
     pullPolicy: IfNotPresent
   # Storage class to use with redis statefulset.
   storageClassName: gp2

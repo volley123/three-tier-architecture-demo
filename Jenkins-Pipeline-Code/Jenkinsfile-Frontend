@@ -90,7 +90,7 @@ pipeline {
                 GIT_USER_NAME = "volley123"
             }
             steps {
-                dir('k8s-specifications/frontend-vote-manifest') {
+                dir('EKS/helm') {
                     withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                         sh '''
                             git config user.email 'devopstest@gmail.com"

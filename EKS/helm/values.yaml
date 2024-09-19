@@ -98,6 +98,10 @@ shipping:
 
 user:
   enabled: false
+  image:
+    repo: ""
+    version: ""
+    pullPolicy: IfNotPresent
   affinity: {}
   nodeSelector: {}
   tolerations: []

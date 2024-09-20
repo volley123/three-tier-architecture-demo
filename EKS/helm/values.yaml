@@ -32,6 +32,16 @@ ocCreateRoute: false
 #   nodeSelector: {}
 #   tolerations: []
 ######################################
+mongodb:
+  enabled: true
+  image:
+    repo: mongo
+    version: latest
+    pullPolicy: IfNotPresent
+  affinity: {}
+  nodeSelector: {}
+  tolerations: []
+
 
 # cart:
 #   enabled: false
@@ -72,6 +82,13 @@ mongodb:
   affinity: {}
   nodeSelector: {}
   tolerations: []
+
+redis:
+  image:
+    pullPolicy: IfNotPresent
+  affinity: {}
+  nodeSelector: {}
+  tolerations: []  
 
 # mysql:
 #   enabled: true

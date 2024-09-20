@@ -73,16 +73,6 @@ mongodb:
 #   nodeSelector: {}
 #   tolerations: []
 
-mongodb:
-  enabled: true
-  image:
-    repo: mongo
-    version: latest
-    pullPolicy: IfNotPresent
-  affinity: {}
-  nodeSelector: {}
-  tolerations: []
-
 redis:
   image:
     pullPolicy: IfNotPresent

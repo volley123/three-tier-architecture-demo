@@ -19,7 +19,7 @@ spec:
       {{ end }}
       containers:
       - name: mongodb
-        image: mongo:latest
+        image: {{ .Values.mongodb.image.repo }}:{{ .Values.mongodb.image.version }}
         imagePullPolicy: {{ .Values.mongodb.image.pullPolicy }}
         ports:
         - containerPort: 27017

@@ -29,8 +29,8 @@ ocCreateRoute: false
 
 catalougue:
   image:
-    repo: roboshop
-    version: latest
+    repo: 415916042243.dkr.ecr.ap-south-1.amazonaws.com/roboshop-catalagoue
+    version: 3
     pullPolicy: IfNotPresent
   affinity: {}
   nodeSelector: {}

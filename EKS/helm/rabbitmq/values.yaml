@@ -34,8 +34,6 @@ ocCreateRoute: false
 ######################################
 rabbitmq:
   image:
-    repo: ""
-    version: ""
     pullPolicy: IfNotPresent
   affinity: {}
   nodeSelector: {}

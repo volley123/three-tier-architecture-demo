@@ -20,7 +20,7 @@ spec:
       containers:
       - name: user
         image: {{ .Values.user.image.repo }}:{{ .Values.user.image.version }}
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        imagePullPolicy: {{ .Values.user.image.pullPolicy }}
         env:
           # agent networking access
           - name: INSTANA_AGENT_HOST

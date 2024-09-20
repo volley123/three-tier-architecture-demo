@@ -74,6 +74,7 @@ mongodb:
 #   tolerations: []
 
 redis:
+  enabled: false
   image:
     pullPolicy: IfNotPresent
   affinity: {}

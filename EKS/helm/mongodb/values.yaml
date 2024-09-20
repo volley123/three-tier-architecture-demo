@@ -33,7 +33,6 @@ ocCreateRoute: false
 #   tolerations: []
 ######################################
 mongodb:
-  enabled: true
   image:
     repo: mongo
     version: latest
@@ -72,14 +71,6 @@ mongodb:
 #   affinity: {}
 #   nodeSelector: {}
 #   tolerations: []
-
-redis:
-  enabled: false
-  image:
-    pullPolicy: IfNotPresent
-  affinity: {}
-  nodeSelector: {}
-  tolerations: []  
 
 # mysql:
 #   enabled: true

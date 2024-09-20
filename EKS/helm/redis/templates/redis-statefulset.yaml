@@ -1,4 +1,3 @@
-{{- if .Values.shipping.enabled }}
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -59,5 +58,4 @@ spec:
         {{ end }}
         resources:
           requests:
-            storage: 1Gi
-{{- end }}            
+            storage: 1Gi     

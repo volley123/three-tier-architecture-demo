@@ -30,14 +30,14 @@ spec:
           requests:
             cpu: 100m
             memory: 500Mi
-        readinessProbe:
-          httpGet:
-            path: /health
-            port: 8080
-          initialDelaySeconds: 30
-          periodSeconds: 5
-          failureThreshold: 30
-          successThreshold: 1
+        # readinessProbe:
+        #   httpGet:
+        #     path: /health
+        #     port: 8080
+        #   initialDelaySeconds: 30
+        #   periodSeconds: 5
+        #   failureThreshold: 30
+        #   successThreshold: 1
           env:
             - name: DB_HOSTNAME
               value: "mysql"            

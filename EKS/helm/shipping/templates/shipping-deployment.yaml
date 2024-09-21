@@ -53,6 +53,8 @@ spec:
               key: password
         - name: DB_NAME
           value: robotstan  # Replace with your actual database name
+        - name: DB_PORT
+          value: 3306
       restartPolicy: Always
       {{- with .Values.shipping.affinity }}
       affinity:

@@ -35,8 +35,9 @@ ocCreateRoute: false
 mysql:
   image:
     repo: mysql
-    version: latest
+    version: "9.0.1"
     pullPolicy: IfNotPresent
+  rootPassword: "dbadmin998"  
   affinity: {}
   nodeSelector: {}
   tolerations: []

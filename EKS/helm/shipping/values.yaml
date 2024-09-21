@@ -41,8 +41,8 @@ shipping:
   nodeSelector: {}
   tolerations: []
 
-mysql:
-  credentials:
-    username: dbadmin  # Replace with actual username
-    password: dbpassword11    # Replace with actual password  
+# mysql:
+#   credentials:
+#     username: dbadmin  # Replace with actual username
+#     password: dbpassword11    # Replace with actual password  
 

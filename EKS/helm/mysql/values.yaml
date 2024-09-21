@@ -33,8 +33,7 @@ ocCreateRoute: false
 #   tolerations: []
 ######################################
 mysql:
-  image: 
-    rdsEndpoint: robotstan.cl80iomyyfjx.ap-south-1.rds.amazonaws.com
+  rdsEndpoint: robotstan.cl80iomyyfjx.ap-south-1.rds.amazonaws.com
   affinity: {}
   nodeSelector: {}
   tolerations: []

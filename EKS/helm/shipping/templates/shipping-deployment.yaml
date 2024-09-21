@@ -23,7 +23,6 @@ spec:
         imagePullPolicy: {{ .Values.shipping.image.pullPolicy }}
         ports:
         - containerPort: 8080
-        # it's Java it needs lots of memory
         resources:
           limits:
             cpu: 200m
@@ -39,6 +38,21 @@ spec:
           periodSeconds: 5
           failureThreshold: 30
           successThreshold: 1
+        env:
+        - name: DB_HOST
+          value: mysql  # This assumes the Service name is "mysql"
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-credentials  # Name of the secret holding MySQL user
+              key: username
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-credentials  # Name of the secret holding MySQL password
+              key: password
+        - name: DB_NAME
+          value: robotstan  # Replace with your actual database name
       restartPolicy: Always
       {{- with .Values.shipping.affinity }}
       affinity:

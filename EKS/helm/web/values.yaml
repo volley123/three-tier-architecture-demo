@@ -32,7 +32,7 @@ ocCreateRoute: false
 #   nodeSelector: {}
 #   tolerations: []
 ######################################
-dispatch:
+web:
   image:
     repo: 415916042243.dkr.ecr.ap-south-1.amazonaws.com/roboshop-cart
     version: 1

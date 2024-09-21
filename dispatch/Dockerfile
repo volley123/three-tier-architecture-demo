@@ -1,12 +1,10 @@
-FROM golang:1.18
+FROM golang:1.22
 
 WORKDIR /go/src/app
 
-COPY go.mod . 
-COPY go.sum .
-COPY main.go .
+COPY *.go .
 
-RUN go mod download
+RUN go mod init dispatch && go get
 RUN go install
 
 CMD ["dispatch"]

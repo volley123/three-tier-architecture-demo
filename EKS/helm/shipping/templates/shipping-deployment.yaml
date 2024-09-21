@@ -38,23 +38,20 @@ spec:
           periodSeconds: 5
           failureThreshold: 30
           successThreshold: 1
-        env:
-        - name: DB_HOST
-          value: mysql  # This assumes the Service name is "mysql"
-        - name: DB_USER
-          valueFrom:
-            secretKeyRef:
-              name: mysql-credentials  # Name of the secret holding MySQL user
-              key: username
-        - name: DB_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: mysql-credentials  # Name of the secret holding MySQL password
-              key: password
-        - name: DB_NAME
-          value: robotstan  # Replace with your actual database name
-        - name: DB_PORT
-          value: 3306
+          env:
+            - name: DB_HOSTNAME
+              value: "mysql"            
+            - name: DB_PORT
+              value: "3306"            
+            - name: DB_NAME
+              value: "robotstan"            
+            - name: DB_USERNAME
+              value: "dbadmin"        # RDS DB Username is dbadmin     
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-db-password
+                  key: db-password   
       restartPolicy: Always
       {{- with .Values.shipping.affinity }}
       affinity:

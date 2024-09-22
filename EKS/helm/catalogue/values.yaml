@@ -30,7 +30,7 @@ ocCreateRoute: false
 catalogue:
   image:
     repo: 415916042243.dkr.ecr.ap-south-1.amazonaws.com/roboshop-catalagoue
-    version: 4
+    version: 5
     pullPolicy: IfNotPresent
   affinity: {}
   nodeSelector: {}

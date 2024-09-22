@@ -37,7 +37,7 @@ payment:
     repo: 415916042243.dkr.ecr.ap-south-1.amazonaws.com/roboshop-payment
     version: 1
     pullPolicy: IfNotPresent
-    gateway: null
+    gateway: https://www.paypal.com 
   affinity: {}
   nodeSelector: {}
   tolerations: []

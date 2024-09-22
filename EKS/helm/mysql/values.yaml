@@ -34,8 +34,8 @@ ocCreateRoute: false
 ######################################
 mysql:
   image:
-    repo: mysql
-    version: "9.0.1"
+    repo: 415916042243.dkr.ecr.ap-south-1.amazonaws.com/roboshop-mysql-database
+    version: 1
     pullPolicy: IfNotPresent
   rootPassword: "dbadmin998"  
   affinity: {}

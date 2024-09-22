@@ -1,10 +1,21 @@
 <!-- search template -->
 <div>
-    <div ng-if="data.searchResults.length == 0">
-        Sorry nothing matches your search
+    <!-- Dropdown for product selection -->
+    <div>
+        <label for="productDropdown">Select a Product:</label>
+        <select id="productDropdown" ng-model="selectedProduct" ng-options="item.name for item in data.productsList track by item.sku" ng-change="onProductSelect(selectedProduct)">
+            <option value="">-- Choose a Product --</option>
+        </select>
     </div>
+
+    <!-- If no search results are found -->
+    <div ng-if="data.searchResults.length == 0">
+        Sorry, nothing matches your search
+    </div>
+
+    <!-- If search results are found -->
     <div ng-if="data.searchResults.length != 0">
-        <h3>These ecellent candidates match your search</h3>
+        <h3>These excellent candidates match your search</h3>
         <table>
             <tr ng-repeat="item in data.searchResults">
                 <td><a class="product" href="/product/{{ item.sku }}">{{ item.name }}</a></td>
